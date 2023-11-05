@@ -31,7 +31,10 @@ public class Arrays {
         }
 
         String[] aulas = {aula1, aula2, aula3};
-
+        /*
+         length --> é usado para arrays.
+         size() --> é usado para coleções de objetos (listas, conjuntos, maps...).
+         */
         for (int i = 0; i < aulas.length; i++) {
             System.out.println(aulas[i]);
         }
