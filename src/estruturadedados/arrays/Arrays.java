@@ -1,4 +1,4 @@
-package estruturadedados.Arrays;
+package estruturadedados.arrays;
 
 /*
  Diferença entre "String[] array" e "List<String> array":

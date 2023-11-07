@@ -1,4 +1,4 @@
-package estruturadedados.Arrays;
+package estruturadedados.arrays;
 
 import java.util.ArrayList;
 

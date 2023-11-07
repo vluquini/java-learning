@@ -1,4 +1,4 @@
-package estruturadedados.Listas;
+package estruturadedados.listas;
 
 import java.util.ArrayList;
 import java.util.List;

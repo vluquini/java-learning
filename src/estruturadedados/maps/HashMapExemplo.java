@@ -1,9 +1,9 @@
-package estruturadedados.conjuntos;
+package estruturadedados.maps;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class ExemploHashMap {
+public class HashMapExemplo {
 
     public static void main(String[] args) {
         // Criar um HashMap para armazenar contatos
