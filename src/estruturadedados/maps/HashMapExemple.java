@@ -3,7 +3,7 @@ package estruturadedados.maps;
 import java.util.HashMap;
 import java.util.Map;
 
-public class HashMapExemplo {
+public class HashMapExemple {
 
     public static void main(String[] args) {
         // Criar um HashMap para armazenar contatos
