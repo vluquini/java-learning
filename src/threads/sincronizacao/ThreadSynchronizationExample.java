@@ -36,7 +36,7 @@ class MyThread extends Thread {
     }
 }
 
-public class ThreadSynchronizationExemplo {
+public class ThreadSynchronizationExample {
     public static void main(String[] args) {
         SharedResource resource = new SharedResource();
         MyThread thread1 = new MyThread(resource);

@@ -16,7 +16,7 @@ class MyThread extends Thread {
     }
 }
 
-public class MultithreadingExemplo {
+public class MultithreadingExample {
     public static void main(String[] args) {
         MyThread thread1 = new MyThread();
         MyThread thread2 = new MyThread();
