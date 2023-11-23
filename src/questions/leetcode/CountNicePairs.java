@@ -1,33 +1,38 @@
 package questions.leetcode;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class CountNicePairs {
     public static void main(String[] args) {
-        int[] nums = {42,11,1,97};
+        int[] nums = {13,10,35,24,76};
         int pairs = 0;
+        int mod = 1000000007;
 
-        for (int i = 0; i < nums.length; i++){
-            nums[i] = nums[i] - invertedValue(nums[i]);
+        // Map para rastrear a contagem de valores após a subtração do valor invertido
+        Map<Integer, Integer> countMap = new HashMap<>();
+
+        for (int num : nums) {
+            int diff = num - reversed(num);
+            countMap.put(diff, countMap.getOrDefault(diff, 0) + 1);
         }
 
-        for (int i = 0; i < (nums.length - 1); i++){
-            for (int j = i+1; j < nums.length; j++){
-                if(nums[i] == nums[j])
-                    pairs++;
-            }
+        for (int count : countMap.values()) {
+            // Casting para evitar possível perda de precisão
+            long longCount = (long) count;
+
+            // Se houver k pares de um determinado valor diff, a contribuição para o total será k * (k - 1) / 2
+            pairs = (int) ((pairs + longCount * (longCount - 1) / 2) % mod);
         }
         System.out.println(pairs);
     }
 
-    public static int invertedValue(int value){
-        // Converter o número para uma string
-        String stringNumber = String.valueOf(value);
-
-        // Inverter a string
-        String invertedNumString = new StringBuilder(stringNumber).reverse().toString();
-
-        // Converter a string invertida de volta para um número inteiro
-        int invertedNum = Integer.parseInt(invertedNumString);
-
-        return invertedNum;
+    private static int reversed(int num) {
+        int reversedNum = 0;
+        while (num > 0) {
+            reversedNum = reversedNum * 10 + num % 10;
+            num /= 10;
+        }
+        return reversedNum;
     }
 }
