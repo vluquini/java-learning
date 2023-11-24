@@ -1,59 +1,140 @@
-# Pacote Conjuntos
+# Estudo de Estruturas de Dados em Java
 
-Este pacote contém exemplos e informações sobre três estruturas de dados 
-relacionadas que usam funções de hash em Java: `TreeSet`, `HashSet`, `HashMap` 
-e `Hashtable`. Cada uma dessas classes tem um propósito distinto e diferenças 
-significativas.
+Este repositório é dedicado ao estudo de estruturas de dados em Java, focando nas interfaces `List`, `Set`, e `Map`, suas principais implementações e características.
 
-## `TreeSet`
+## Set
+Representa uma coleção que não permite elementos duplicados e não mantém uma ordem específica.
 
-O `TreeSet` é uma estrutura de dados que implementa a interface `Set` em Java 
-e é baseada em uma árvore (normalmente uma árvore vermelha-preta). Ele mantém 
-seus elementos em ordem natural, o que significa que os elementos são armazenados 
-em uma ordem que segue a ordem natural dos objetos (por exemplo, ordem alfabética 
-para strings).
+## Map
+Representa uma coleção de pares chave-valor, onde cada chave é única. Não permite chaves duplicadas.
 
-Principais características do `TreeSet`:
+## List
+Representa uma sequência ordenada de elementos, permitindo elementos duplicados e mantendo a ordem de inserção.
 
-- Armazena elementos únicos: O `TreeSet` não permite elementos duplicados. Cada 
-elemento é exclusivo na coleção.
+---
 
-- Ordem Natural: Os elementos são armazenados em ordem natural, o que é útil
-para situações em que você deseja acessar os elementos em ordem.
+## Resumo
 
-- Desempenho: O desempenho do `TreeSet` para operações de inserção, remoção e
-busca é relativamente eficiente, embora um pouco mais lento do que o `HashSet`.
+- **List**: Permite elementos duplicados e mantém a ordem de inserção.
+- **Set**: Não permite elementos duplicados e não mantém uma ordem específica.
+- **Map**: Associa chaves exclusivas a valores.
 
-- Não Sincronizado: Assim como o `HashSet`, o `TreeSet` não é sincronizado, o 
-que significa que não é seguro para uso concorrente em threads simultâneas.
+---
 
-O `TreeSet` é uma escolha apropriada quando você precisa de uma coleção que mantém 
-elementos únicos em ordem natural. No entanto, lembre-se de que a ordem natural 
-pode variar dependendo do tipo de elementos que você está armazenando.
+## List
 
-## `HashSet`
+### ArrayList
+- **Características:**
+    - Implementação baseada em array dinâmico.
+    - Eficiente para acesso direto e busca.
+    - Pode ser menos eficiente para inserções e remoções no meio da lista.
 
-O `HashSet` é uma coleção que armazena elementos únicos, sem permitir duplicatas. 
-Ele é útil quando você precisa manter uma coleção de elementos únicos. 
-Os elementos em um `HashSet` não são armazenados em uma ordem específica e a 
-estrutura não é segura para threads.
+### LinkedList
+- **Características:**
+    - Implementação baseada em lista duplamente encadeada.
+    - Eficiente para inserções e remoções no meio da lista.
+    - Menos eficiente para acesso direto e busca.
 
-## `HashMap`
+### Vector
+- **Características:**
+    - Similar ao `ArrayList` (implementação baseada em array dinâmico).
+    - Métodos são sincronizados, o que pode impactar o desempenho em operações concorrentes.
 
-O `HashMap` é uma coleção de pares chave-valor, onde cada chave mapeia para 
-um valor. Ele é usado para armazenar e recuperar valores associados a chaves.
-O `HashMap` permite elementos duplicados, mas as chaves são únicas. 
-Assim como o `HashSet`, os elementos em um `HashMap` não são armazenados em 
-uma ordem específica e a estrutura não é segura para threads.
+### Stack
+- **Características:**
+    - Extende `Vector`.
+    - Implementa uma pilha (last-in, first-out).
 
-## `Hashtable`
+### CopyOnWriteArrayList
+- **Características:**
+    - Implementação thread-safe.
+    - Eficiente para leitura, copiando a lista ao modificar.
 
-O `Hashtable` é semelhante ao `HashMap`, mas é uma versão mais antiga e projetada 
-para ser segura para threads (thread-safe). No entanto, seu uso é desencorajado 
-em favor de classes mais modernas, como `ConcurrentHashMap`, que oferecem melhor 
-desempenho em ambientes concorrentes. O `Hashtable` não permite chaves duplicadas.
+### Resumo:
+- **ArrayList:** Eficiente para acesso direto e busca, menos eficiente para inserções/remoções no meio.
+- **LinkedList:** Eficiente para inserções/remoções no meio, menos eficiente para acesso direto/busca.
+- **Vector:** Similar ao `ArrayList`, mas métodos são sincronizados.
+- **Stack:** Implementa uma pilha.
+- **CopyOnWriteArrayList:** Thread-safe, eficiente para leitura.
 
-A escolha entre `HashSet` e `HashMap` depende de requisitos específicos. No geral,
-use o `HashSet` quando você precisar armazenar elementos únicos e o `HashMap` 
-quando precisar associar chaves a valores.
+---
 
+## Set
+
+### HashSet
+- **Características:**
+    - Implementação baseada em tabela de dispersão (hash table).
+    - Não garante a ordem dos elementos.
+    - Permite elementos nulos.
+    - Não é sincronizado.
+
+### TreeSet
+- **Características:**
+    - Implementação baseada em árvore (normalmente árvore vermelha-preta).
+    - Mantém elementos em ordem natural.
+    - Não permite elementos nulos.
+    - Não é sincronizado.
+
+### LinkedHashSet
+- **Características:**
+    - Implementação híbrida entre `HashSet` e `LinkedList`.
+    - Mantém a ordem de inserção dos elementos.
+    - Permite elementos nulos.
+    - Não é sincronizado.
+
+### EnumSet
+- **Características:**
+    - Implementação específica para conjuntos de enums.
+    - Muito eficiente e especializada para enums.
+    - Não permite elementos nulos.
+    - Não é sincronizado.
+
+### Resumo:
+- **HashSet:** Implementação baseada em tabela de dispersão, sem garantia de ordem.
+- **TreeSet:** Implementação baseada em árvore, mantém ordem natural.
+- **LinkedHashSet:** Mantém ordem de inserção, híbrido entre `HashSet` e `LinkedList`.
+- **EnumSet:** Especializado para conjuntos de enums.
+
+---
+
+## Map
+
+### HashMap
+- **Características:**
+    - Implementação baseada em tabela de dispersão.
+    - Permite chaves e valores nulos.
+    - Não garante ordem nos pares chave-valor.
+    - Não é sincronizado.
+
+### TreeMap
+- **Características:**
+    - Implementação baseada em árvore (normalmente árvore vermelha-preta).
+    - Mantém a ordem natural das chaves.
+    - Não permite chaves nulas, mas valores podem ser nulos.
+    - Não é sincronizado.
+
+### LinkedHashMap
+- **Características:**
+    - Implementação híbrida entre `HashMap` e `LinkedList`.
+    - Mantém ordem de inserção.
+    - Permite chaves e valores nulos.
+    - Não é sincronizado.
+
+### Hashtable
+- **Características:**
+    - Implementação mais antiga, sincronizada.
+    - Não permite chaves ou valores nulos.
+    - Substituído por `ConcurrentHashMap` em ambientes concorrentes.
+
+### ConcurrentHashMap
+- **Características:**
+    - Implementação otimizada para concorrência.
+    - Boa performance em ambientes com múltiplas threads.
+    - Permite chaves e valores nulos.
+
+### Resumo:
+- **HashMap:** Implementação baseada em tabela de dispersão, sem garantia de ordem.
+- **TreeMap:** Implementação baseada em árvore, mantém ordem natural das chaves.
+- **LinkedHashMap:** Mantém ordem de inserção, híbrido entre `HashMap` e `LinkedList`.
+- **Hashtable:** Implementação mais antiga, sincronizada, não permite nulos.
+- **ConcurrentHashMap:** Otimizado para concorrência, permite nulos.
