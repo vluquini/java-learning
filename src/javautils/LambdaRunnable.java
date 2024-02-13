@@ -1,4 +1,4 @@
-package java8;
+package javautils;
 
 /*
 Referência: Canal RinaldoDev

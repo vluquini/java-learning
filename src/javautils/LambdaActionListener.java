@@ -1,4 +1,4 @@
-package java8;
+package javautils;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

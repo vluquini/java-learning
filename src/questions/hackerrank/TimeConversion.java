@@ -2,7 +2,9 @@ package questions.hackerrank;
 
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-
+/*
+Objetivo: formatar o horário de 0-12h para 0-24h.
+ */
 public class TimeConversion {
     public static void main(String[] args) {
         String s = "07:05:45PM";

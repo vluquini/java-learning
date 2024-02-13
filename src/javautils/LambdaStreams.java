@@ -1,4 +1,4 @@
-package java8;
+package javautils;
 
 import java.util.List;
 import java.util.Arrays;
@@ -13,7 +13,7 @@ public class LambdaStreams {
         // Assim seria até o Java 7
         for (Integer integer : asList) {
             System.out.print(integer + " ");
-        };
+        }
 
         System.out.println();
         // Lê-se: para cada "elemento" nesta stream, faça...

@@ -1,7 +1,11 @@
 package questions.hackerrank;
 
 import java.util.*;
-
+/*
+Descrição: retornar uma lista de inteiros que contém
+a quantidade de vezes que os elementos de
+'queries' aparecem em 'strings'.
+ */
 public class SparseArrays {
     public static void main(String[] args) {
         List<String> strings = new ArrayList<>();

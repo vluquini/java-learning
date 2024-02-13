@@ -1,4 +1,4 @@
-package java8;
+package javautils;
 
 import java.util.List;
 import java.util.Arrays;
