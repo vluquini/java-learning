@@ -7,7 +7,7 @@ Objetivo: encontrar o único valor n que não se repete na lista.
 public class LonelyInteger {
     public static void main(String[] args){
         List<Integer> arr = new ArrayList<>(
-                Arrays.asList(1, 2, 3, 2, 1)
+                Arrays.asList(2, 2, 1, 3, 3, 5, 1)
         );
 
         System.out.println(lonelyInteger(arr));
