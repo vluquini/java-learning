@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 public class LinkedListExample {
     public static void main(String[] args) {
-        // Criação de um LinkedList de Inteiros
+        // LinkedList é uma implementação de Deque (double queue)
         LinkedList<Integer> numeros = new LinkedList<>();
 
         // Adicionando elementos ao LinkedList
