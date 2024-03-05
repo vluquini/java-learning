@@ -14,6 +14,12 @@ public class HashMapExemple {
         contatos.put("Bob", "987-654-3210");
         contatos.put("Charlie", "555-555-5555");
 
+        // Exibir conteúdo em uma linha
+        System.out.println("Conteúdo do Map: " + contatos.entrySet());
+
+        System.out.println("Lista das chaves: " + contatos.keySet());
+        System.out.println("Lista dos valores: " + contatos.values());
+
         // Exibir todos os contatos
         System.out.println("Contatos:");
         for (Map.Entry<String, String> entry : contatos.entrySet()) {
