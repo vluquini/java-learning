@@ -13,6 +13,9 @@ public class LinkedListExample {
         numeros.add(3);
         numeros.add(4);
 
+        // Adicionando elemento em uma posição específica
+        numeros.add(3, 9);
+
         // Acessando elementos por índice
         int primeiroNumero = numeros.get(0);
         System.out.println("Primeiro número: " + primeiroNumero);

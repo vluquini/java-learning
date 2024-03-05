@@ -1,5 +1,7 @@
 package questions;
 
+import java.util.Stack;
+
 public class ReverseString {
     public static void main(String[] args) {
         String teste = "Zaraki Kenpachi";
@@ -9,6 +11,7 @@ public class ReverseString {
         System.out.println(reverseString3(teste));
         System.out.println(reverseString4(teste));
         System.out.println(reverseString5(teste));
+        System.out.println(reverseString6(teste));
     }
     // utilizando o método swap --> O(n/2)
     public static String reverseString1(String s){
@@ -66,6 +69,20 @@ public class ReverseString {
             tam--;
         }
         return reversed;
+    }
+
+    public static String reverseString6(String s){
+        Stack<Character> stack = new Stack<>();
+        // quando é feita múltiplas concatenações, é melhor usar StringBuilder
+        StringBuilder reversed = new StringBuilder();
+
+        for(char c : s.toCharArray())
+            stack.push(c);
+
+        while(!stack.empty())
+            reversed.append(stack.pop());
+
+        return reversed.toString();
     }
 
 }
